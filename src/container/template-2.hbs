@@ -1,0 +1,104 @@
+<main class='p-5'>
+  <div class='page-content'>
+    <div class="page-block">
+    <header class='header row g-0'>
+        <div class="col-3">
+         {{>logo}}
+        </div>      
+        <nav class='header-nav col-9'>
+            <div class="header-nav-right">
+                {{>nav header=header }}
+            </div>
+        </nav>
+    </header>    
+    {{> divider}}
+  </div>
+
+
+  <div class="page-block">
+    <div class="hero">
+     {{#with hero}}
+        {{>hero data=hero}} 
+         <a href="{{button.url}}" class="button">{{button.text}}</a>
+     {{/with}}
+    
+     </div>
+  </div>
+
+
+  <div class="page-block">
+    <div class="row g-4">
+        {{#each preview}}
+        <div class="col-6">
+            {{> cardPreview data=this}}      
+        </div>
+        {{/each}}  
+    </div>
+  </div>
+
+
+   <div class="page-block">
+    <main class="main">
+        <div class="row g-0">
+            <div class="col-12">
+                <div class="list-header">
+                    <div class="row g-0">
+                        <div class="col-6">
+                            <h2 class="list-title">List of posts</h2>
+                        </div>
+                        <div class="col-6">
+                            <div class="category-list">
+                                {{#each categories}}
+                                <button class="category-buttom">{{text}}</button>
+                                {{/each}}
+                            </div>
+                        </div>      
+                    </div>
+                </div>
+             </div>
+            <div class="col-7">
+                <div class="list">
+                   {{#each news}}
+                   {{> cardPost data=this}}
+                   {{/each}}
+                </div>
+            </div>
+            <div class="col-5">
+                <aside class="list-aside">
+                    <div class="about">
+                        <h4 class="about-title">About</h4>
+                        <p class="about-text">{{about}}</p>
+                    </div>
+
+
+                   {{>linkList data=archive title="Archives"}}
+                   {{>linkList data=social title="Social"}}
+                    
+                </aside>
+            </div>       
+        </div>
+    </main>
+    
+  </div>
+
+  
+
+    <div class="page-block">
+        {{> divider}}
+        <footer class="row g-0 footer">
+            <div class="col-3">
+                {{>logo}}
+                <span class="footer-copyright">Copyright 2023-2024</span>
+            </div>
+            {{#each footer}}
+                <div class="col-3">
+                    <span class="footer-title ">{{title}}</span>
+                    {{>nav header=links isVertical=true}}
+                </div>
+            {{/each}}
+            
+        </footer>
+    </div>
+
+  </div>
+</main>
