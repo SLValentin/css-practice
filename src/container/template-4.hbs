@@ -1,4 +1,6 @@
- 
+
+
+    
     <header class='header '>
         <div>
          {{>logo}}
@@ -12,46 +14,36 @@
 
 
 
-    {{#with hero}}
-    <div class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">{{title}}</h1>
-            <p class="hero-text">{{text}}</p>
-
-        </div>
-        <img src="{{photo}}" alt="Hero image" class="hero-image">
+    {{#with main}}
+    <div class="main">
+        <img src="{{image}}" alt="Main image" class="main-image">
+        <div class="main-content">
+            <h1 class="main-title">{{heading}}</h1>
+            <p class="main-text">{{descriotion}}</p>
+            <a class="main-button" href="{{href}}">{{button}}</a>
+        </div>       
     </div>
     {{/with}}
 
 
 
-    <main class="blog">
-        {{#each blog}}
-        {{>cardBlog data=this}}
+    <main class="featured">
+        {{#each featured}}
+        {{>cardBlog img=photo title=heading text=info href=linkUrl button=linkText}}
         {{/each}}
         
     </main>
  
-    {{#with form}}
-    <div class="form">
-        <div class="form-content">
-            <h3 class="form-title">{{title}}</h3>
-            <p class="form-info">{{info}}</p>
-        </div>
-        <div class="form-action">
-            <a class="form-button" href="{{href}}">{{button}}</a>
-        </div>
-
-
-    </div>
-    {{/with}}
     
-
-
-
-  
-   
-       
+    <div class="form">
+        {{#each actions}}
+        <div class="actions-content">
+            <h3 class="actions-title">{{heading}}</h3>
+            <a class="actions-button" href="{{url}}">{{text}}</a>
+        </div>  
+        {{/each}}
+    </div>
+          
         <footer class="footer">
             <div >
                 {{>logo}}
