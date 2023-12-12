@@ -1,0 +1,87 @@
+
+    <header >
+        <div class='header '>
+            <div class="logo">
+            {{header.brandName}}
+            </div>      
+            <nav class='header-nav '>   
+                {{#with header}}
+                    {{#each links}}
+                        <a href='{{url}}' class='nav-link'>{{text}}</a>
+                    {{/each}}         
+            </nav>
+        </div>
+                <div class="ad-row">
+                    <div class="ad-description">
+                    <div class="ad-icon">Ad</div>
+                    <span class="ad-text">{{ad.text}} : {{ad.url}}</span>
+                    </div>
+                    <div class=" ad-text users-online">Users online: {{userOnline}}</div>
+                </div>
+                {{/with}}
+    </header>   
+
+
+    <main class="main"> 
+        {{#with hero}}
+            <div class="hero-block">
+                <h1 class="hero-title">{{title}}</h1>
+                <div class="hero-text">{{description}}</div>
+                <button href="{{button.url}}" class="hero-btn">{{button.text}}</button>
+            </div>
+        {{/with}}
+
+        {{#with about}}
+        <div class="about-block">
+            <div class="about-title">{{heading}}</div>
+            <span class="about-info">{{info}}</span>
+        </div>
+        {{/with}}
+
+        <div class="article-block">
+
+            <div class="article-heading">
+                <h2 class="article-title">Our Articles</h2>
+                <button class="article-btn">View All</button>
+            </div>
+            <div class="article-card-group">
+                {{#each articles }}
+                    <div class="article-card">
+                        <div></div>
+                        <img class="card-img" src="{{photo}}">
+                        {{#if isNew}}<div class="card-leable"> NEW </div> {{/if}}                           
+                        <div class="card-title">{{name}}</div>
+                        <span class="card-description">{{description}}</span>
+                        <button href="#" class="card-btn">Read All</button>
+                    </div>
+                {{/each}}
+
+            </div>
+        </div>
+
+
+        
+    </main>
+
+
+
+
+
+   
+     
+
+        <footer class="footer">
+            {{#with footer}}
+                <div > 
+                    {{#each pages}}                   
+                        <a href="{{path}}" class="footer-link">{{name}}</a>                        
+                    {{/each}}
+                </div>                     
+                    <span class="footer-copyright">{{copyright}}</span>                          
+            {{/with}}
+            
+        </footer>
+ 
+ 
+
+
