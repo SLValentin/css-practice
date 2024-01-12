@@ -1,5 +1,5 @@
 
-
+@layer normalize{
 /* Document
    ========================================================================== */
 
@@ -413,7 +413,7 @@ input:focus
 
 
 /* Text Inputs
------------------------------------------------*/
+-----------------------------------------------
 
 input[type=date],
 input[type=datetime],
@@ -432,15 +432,15 @@ input[type=week]
 
 
 
-/* Button Controls
------------------------------------------------*/
+/* Button Control
+-----------------------------------------------
 
 input[type=checkbox],
 input[type=radio]
 {
     width:13px;
     height:13px;
-}
+}*/
 
 
 /* Search Input
@@ -594,11 +594,11 @@ ul,
 var,
 video {
   margin: 0;
- /*padding: 0;
+ padding: 0;
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;*/
+  vertical-align: baseline;
 }
 
 :focus {
@@ -616,7 +616,7 @@ hgroup,
 menu,
 nav,
 section {
- /* display: block;*/
+  display: block;
 }
 
 body {
@@ -935,4 +935,5 @@ input[type='number'] {
 input:-webkit-autofill {
   -webkit-box-shadow: none;
   box-shadow: none;
+}
 }

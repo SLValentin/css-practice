@@ -32,6 +32,16 @@ router.get('/slack', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/dashboard', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('dashboard', {
+    layout: null,
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -68,34 +78,19 @@ router.get('/template-1', function (req, res) {
       {
         name: 'Free',
         price: 0,
-        features: [
-          '10 users included',
-          '2 GB of storage',
-          'Email support',
-          'Help center access',
-        ],
+        features: ['10 users included', '2 GB of storage', 'Email support', 'Help center access'],
         button: 'Sign up for free',
       },
       {
         name: 'Pro',
         price: 15,
-        features: [
-          '20 users included',
-          '4 GB of storage',
-          'Priority email support',
-          'Help center access',
-        ],
+        features: ['20 users included', '4 GB of storage', 'Priority email support', 'Help center access'],
         button: 'Get started',
       },
       {
         name: 'Enterprise',
         price: 30,
-        features: [
-          '30 users included',
-          '15 GB of storage',
-          'Phone and email support',
-          'Help center access',
-        ],
+        features: ['30 users included', '15 GB of storage', 'Phone and email support', 'Help center access'],
         button: 'Contact us',
       },
     ],
@@ -275,29 +270,25 @@ router.get('/template-2', function (req, res) {
         title: 'New blog post',
         date: 'February 14',
         author: 'John',
-        description:
-          'This blog post discusses various topics related to web development and design, including best practices and emerging trends.',
+        description: 'This blog post discusses various topics related to web development and design, including best practices and emerging trends.',
       },
       {
         title: 'Latest blog post',
         date: 'March 1',
         author: 'Emily',
-        description:
-          'This blog post covers a range of topics, from productivity tips to personal development strategies, with the aim of helping readers lead more fulfilling lives.',
+        description: 'This blog post covers a range of topics, from productivity tips to personal development strategies, with the aim of helping readers lead more fulfilling lives.',
       },
       {
         title: 'Popular blog post',
         date: 'April 7',
         author: 'David',
-        description:
-          'This blog post focuses on the importance of networking and building relationships in business, providing tips and insights for professionals of all levels.',
+        description: 'This blog post focuses on the importance of networking and building relationships in business, providing tips and insights for professionals of all levels.',
       },
       {
         title: 'Top blog post',
         date: 'May 12',
         author: 'Sophie',
-        description:
-          'This blog post examines the latest trends and innovations in the field of marketing, with a particular focus on social media and content marketing strategies.',
+        description: 'This blog post examines the latest trends and innovations in the field of marketing, with a particular focus on social media and content marketing strategies.',
       },
     ],
     about:
@@ -444,8 +435,7 @@ router.get('/template-3', function (req, res) {
     ],
 
     hero: {
-      title:
-        'First featurette heading. It’ll blow your mind.',
+      title: 'First featurette heading. It’ll blow your mind.',
       text: 'Some great placeholder content for the first featurette here. Imagine some exciting prose here.',
       photo: 'https://picsum.photos/500/500',
     },
@@ -580,8 +570,7 @@ router.get('/template-4', function (req, res) {
 
     main: {
       heading: 'Oh yeah, it’s that good. See for yourself.',
-      descriotion:
-        'Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.',
+      descriotion: 'Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.',
       image: 'https://picsum.photos/500/500',
       button: 'View details',
       href: 'https://example.com/',
@@ -757,14 +746,12 @@ router.get('/template-5', function (req, res) {
       list: [
         {
           name: 'Tom',
-          message:
-            'I just got back from a trip to Europe. It was amazing!...',
+          message: 'I just got back from a trip to Europe. It was amazing!...',
           day: 'Tue',
         },
         {
           name: 'Emily',
-          message:
-            "I can't wait for the weekend. I'm planning to go hiking with some friends...",
+          message: "I can't wait for the weekend. I'm planning to go hiking with some friends...",
           day: 'Wed',
         },
       ],
@@ -881,8 +868,7 @@ router.get('/template-6', function (req, res) {
     ],
     info: {
       title: 'Vertically centered hero sign-up form',
-      description:
-        'Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation',
+      description: 'Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation',
     },
     form: {
       inputs: [
@@ -911,18 +897,15 @@ router.get('/template-6', function (req, res) {
       list: [
         {
           nickname: 'Techie',
-          description:
-            'The latest software update includes several new features and performance improvements, making it faster and easier to use...',
+          description: 'The latest software update includes several new features and performance improvements, making it faster and easier to use...',
         },
         {
           nickname: 'Traveler',
-          description:
-            "We've added new destinations to our travel packages, including exotic locations and off-the-beaten-path adventures...",
+          description: "We've added new destinations to our travel packages, including exotic locations and off-the-beaten-path adventures...",
         },
         {
           nickname: 'Foodie',
-          description:
-            'Our new menu features a variety of delicious dishes inspired by cuisines from around the world, with options for every taste and dietary preference...',
+          description: 'Our new menu features a variety of delicious dishes inspired by cuisines from around the world, with options for every taste and dietary preference...',
         },
       ],
       show_all: {
@@ -936,18 +919,15 @@ router.get('/template-6', function (req, res) {
       list: [
         {
           name: 'John Doe',
-          details:
-            'In the last month, the site received a total of 10,000 unique visitors. The majority of the traffic came from search engines, with Google being the top source. The bounce rate was 45%, which is within the acceptable range.',
+          details: 'In the last month, the site received a total of 10,000 unique visitors. The majority of the traffic came from search engines, with Google being the top source. The bounce rate was 45%, which is within the acceptable range.',
         },
         {
           name: 'Jane Smith',
-          details:
-            "The site's average page load time was 3.5 seconds, which is slower than the recommended 2 seconds. The site's performance score is 80 out of 100, which is good but could be improved. There were no major errors or issues identified during the analysis.",
+          details: "The site's average page load time was 3.5 seconds, which is slower than the recommended 2 seconds. The site's performance score is 80 out of 100, which is good but could be improved. There were no major errors or issues identified during the analysis.",
         },
         {
           name: 'Bob Johnson',
-          details:
-            "The site's SSL certificate is valid and up-to-date. There were no known security vulnerabilities or issues found during the analysis. All user data is encrypted and protected using industry-standard methods.",
+          details: "The site's SSL certificate is valid and up-to-date. There were no known security vulnerabilities or issues found during the analysis. All user data is encrypted and protected using industry-standard methods.",
         },
       ],
     },
@@ -1064,8 +1044,7 @@ router.get('/template-7', function (req, res) {
 
     hero: {
       title: 'The most professional service',
-      description:
-        'I am incredibly grateful for the outstanding work done by this team. Their promptness and attention to detail',
+      description: 'I am incredibly grateful for the outstanding work done by this team. Their promptness and attention to detail',
       button: {
         url: 'www.example.com/buy',
         text: 'Go to shop',
@@ -1082,29 +1061,25 @@ router.get('/template-7', function (req, res) {
         id: 1,
         photo: 'https://picsum.photos/400/200',
         name: 'Lorem Ipsum',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dolor eget sapien lobortis finibus. Fusce euismod, ipsum sit amet pulvinar imperdiet, sapien nunc viverra nulla, vel pulvinar velit leo sed velit.',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dolor eget sapien lobortis finibus. Fusce euismod, ipsum sit amet pulvinar imperdiet, sapien nunc viverra nulla, vel pulvinar velit leo sed velit.',
       },
       {
         id: 2,
         isNew: true,
         photo: 'https://picsum.photos/400/200',
         name: 'Dolor Sit Amet',
-        description:
-          'Etiam luctus ante eget ante convallis iaculis. Nunc viverra quam vel libero accumsan, non malesuada neque vestibulum. Curabitur malesuada, velit ut pretium ullamcorper, lacus elit vehicula sapien, ut sollicitudin quam metus eget sapien.',
+        description: 'Etiam luctus ante eget ante convallis iaculis. Nunc viverra quam vel libero accumsan, non malesuada neque vestibulum. Curabitur malesuada, velit ut pretium ullamcorper, lacus elit vehicula sapien, ut sollicitudin quam metus eget sapien.',
       },
       {
         id: 3,
         photo: 'https://picsum.photos/400/200',
         name: 'Ipsum Dolor',
-        description:
-          'Sed euismod risus sit amet sapien fermentum, vitae scelerisque lectus hendrerit. Integer at velit tristique, varius dolor in, gravida est. Nunc sagittis justo vel velit tempor, eget faucibus nulla posuere.',
+        description: 'Sed euismod risus sit amet sapien fermentum, vitae scelerisque lectus hendrerit. Integer at velit tristique, varius dolor in, gravida est. Nunc sagittis justo vel velit tempor, eget faucibus nulla posuere.',
       },
     ],
 
     footer: {
-      copyright:
-        '© Copyrights Shop 2022-2023. All rights reserved',
+      copyright: '© Copyrights Shop 2022-2023. All rights reserved',
       pages: [
         {
           path: 'www.example.com/terms',
